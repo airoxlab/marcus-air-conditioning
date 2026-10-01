@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Marcus Air Conditioning — heating and air solutions in Plumas Lake, CA. Over 25 years of experience. AC installation, repair, furnace service and maintenance for homes and businesses across Yuba, Sutter and Placer counties. CSLB #1130983. Call (916) 793-0168.">
+<title>Marcus Air Conditioning</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --mist: #F6F8FA;
+    --mist-deep: #E9EEF2;
+    --steel: #1C3D52;
+    --steel-deep: #112939;
+    --ember: #D4572A;
+    --ember-soft: #E8714A;
+    --breeze: #3D93B8;
+    --ink: #1A222A;
+    --ink-soft: #5B6874;
+    --line: #DAE3E9;
+    --card: #FFFFFF;
+    --img-bg: #E3EAF0;
+    --on-dark: #EFF4F7;
+    --on-accent: #FFFFFF;
+    --display: "Sora", "Segoe UI", Arial, sans-serif;
+    --body: "Inter", "Segoe UI", Arial, sans-serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --mist: #13181C;
+      --mist-deep: #0D1215;
+      --steel: #7FB0CC;
+      --steel-deep: #A6CCE2;
+      --ember: #E87B55;
+      --ember-soft: #D4572A;
+      --breeze: #63AFD0;
+      --ink: #E5EBF0;
+      --ink-soft: #95A3AF;
+      --line: #27313A;
+      --card: #192127;
+      --img-bg: #222B33;
+      --on-dark: #0D1215;
+      --on-accent: #0D1215;
+    }
+  }
+  :root[data-theme="dark"] {
+    --mist: #13181C;
+    --mist-deep: #0D1215;
+    --steel: #7FB0CC;
+    --steel-deep: #A6CCE2;
+    --ember: #E87B55;
+    --ember-soft: #D4572A;
+    --breeze: #63AFD0;
+    --ink: #E5EBF0;
+    --ink-soft: #95A3AF;
+    --line: #27313A;
+    --card: #192127;
+    --img-bg: #222B33;
+    --on-dark: #0D1215;
+    --on-accent: #0D1215;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    margin: 0; background: var(--mist); color: var(--ink);
+    font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+  }
+  a { color: var(--breeze); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--breeze); outline-offset: 3px; border-radius: 2px; }
+  img, svg { max-width: 100%; display: block; }
+
+  .wrap { max-width: 70rem; margin: 0 auto; padding: 0 1.25rem; }
+  .eyebrow {
+    font-weight: 700; font-size: 0.75rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ember); margin: 0 0 0.8rem;
+  }
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; color: var(--steel-deep); text-wrap: balance; margin: 0; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.85rem, 4.5vw, 2.5rem); line-height: 1.1; }
+  h3 { font-size: 1.14rem; }
+  p { margin: 0; }
+  section { padding: 4.25rem 0; scroll-margin-top: 4.5rem; }
+  .prose { max-width: 40em; }
+  .prose p + p { margin-top: 1rem; }
+  .section-intro { max-width: 44em; margin-top: 1rem; color: var(--ink-soft); }
+
+  /* Header */
+  .site-head {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--mist) 93%, transparent);
+    backdrop-filter: blur(9px); border-bottom: 1px solid var(--line);
+  }
+  header.site { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--steel-deep); line-height: 1.08; }
+  .brand .mark {
+    width: 44px; height: 44px; flex: none; border-radius: 0.5rem;
+    background: var(--steel); color: var(--on-accent); display: grid; place-items: center;
+  }
+  .brand .name { font-family: var(--display); font-weight: 800; font-size: 1.08rem; letter-spacing: -0.02em; }
+  .brand small { display: block; font-family: var(--body); font-weight: 600; font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ember); }
+  nav.top { display: none; gap: 1.25rem; }
+  nav.top a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.94rem; }
+  nav.top a:hover { color: var(--ember); }
+  .call-btn {
+    display: inline-block; background: var(--ember); color: var(--on-accent);
+    text-decoration: none; font-weight: 700; font-size: 0.92rem;
+    padding: 0.55rem 1.2rem; border-radius: 0.4rem; white-space: nowrap;
+  }
+  .call-btn:hover { background: var(--steel); }
+  @media (min-width: 980px) { nav.top { display: flex; } }
+
+  /* Hero */
+  .hero { padding: 3.2rem 0 3.6rem; position: relative; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: -25% -10% auto 42%; height: 85%;
+    background: radial-gradient(ellipse at center, color-mix(in srgb, var(--breeze) 16%, transparent), transparent 66%);
+    pointer-events: none;
+  }
+  .hero-grid { display: grid; gap: 2.4rem; align-items: center; position: relative; }
+  @media (min-width: 860px) { .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 3rem; } }
+  .pills { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 1.15rem; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+    padding: 0.32rem 0.95rem; font-weight: 600; font-size: 0.83rem; color: var(--steel);
+  }
+  .hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.05rem); line-height: 1.06; }
+  .hero h1 .warm { color: var(--ember); }
+  .hero .lede { margin-top: 1.15rem; font-size: 1.13rem; max-width: 34em; color: var(--ink-soft); }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.8rem; }
+  .btn {
+    display: inline-block; text-decoration: none; font-family: var(--display);
+    font-weight: 700; font-size: 0.98rem; padding: 0.85rem 1.6rem; border-radius: 0.4rem;
+  }
+  .btn-solid { background: var(--ember); color: var(--on-accent); }
+  .btn-solid:hover { background: var(--ember-soft); }
+  .btn-ghost { border: 2px solid var(--steel); color: var(--steel); }
+  .btn-ghost:hover { border-color: var(--ember); color: var(--ember); }
+  .hero-note { margin-top: 1.3rem; font-size: 0.92rem; color: var(--ink-soft); }
+  .hero-photo { margin: 0; border-radius: 0.8rem; overflow: hidden; border: 1px solid var(--line); background: var(--img-bg); }
+  .hero-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+  /* Strip */
+  .strip { background: var(--steel-deep); padding: 2rem 0; }
+  .strip-grid { display: grid; gap: 1.4rem; grid-template-columns: repeat(2, 1fr); text-align: center; }
+  @media (min-width: 780px) { .strip-grid { grid-template-columns: repeat(4, 1fr); } }
+  .strip-grid .n { font-family: var(--display); font-weight: 800; font-size: clamp(1.2rem, 2.9vw, 1.65rem); color: #F0A98C; line-height: 1.12; }
+  .strip-grid .l { margin-top: 0.3rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-dark); opacity: 0.85; }
+  :root[data-theme="dark"] .strip { background: var(--card); }
+  :root[data-theme="dark"] .strip-grid .l { color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .strip { background: var(--card); }
+    :root:not([data-theme="light"]) .strip-grid .l { color: var(--ink); }
+  }
+
+  /* Services */
+  .svc-grid { display: grid; gap: 1.2rem; margin-top: 2.4rem; }
+  @media (min-width: 640px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+  .svc { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--breeze); border-radius: 0.6rem; padding: 1.6rem 1.45rem; }
+  .svc .ico { color: var(--breeze); margin-bottom: 0.85rem; }
+  .svc p { margin-top: 0.5rem; font-size: 0.94rem; color: var(--ink-soft); }
+
+  /* Split: residential / commercial */
+  .split { background: var(--mist-deep); }
+  .split-grid { display: grid; gap: 1.3rem; margin-top: 2.4rem; }
+  @media (min-width: 760px) { .split-grid { grid-template-columns: 1fr 1fr; } }
+  .side { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 0.7rem; overflow: hidden; }
+  .side img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--img-bg); }
+  .side .body { padding: 1.5rem 1.5rem 1.7rem; }
+  .side h3 { font-size: 1.22rem; }
+  .side p { margin-top: 0.5rem; font-size: 0.95rem; color: var(--ink-soft); }
+
+  /* Experience */
+  .exp-wrap { display: grid; gap: 1.8rem; margin-top: 2.3rem; align-items: center; }
+  @media (min-width: 820px) { .exp-wrap { grid-template-columns: minmax(0, 280px) 1fr; gap: 2.6rem; } }
+  .exp-card { background: var(--card); border: 1px solid var(--line); border-radius: 0.8rem; padding: 2rem 1.6rem; text-align: center; }
+  .exp-card .big { font-family: var(--display); font-weight: 800; font-size: 3.4rem; color: var(--ember); line-height: 1; }
+  .exp-card .lbl { margin-top: 0.4rem; font-weight: 700; font-size: 1rem; }
+  .exp-card .sub { margin-top: 0.45rem; font-size: 0.87rem; color: var(--ink-soft); }
+  .checks { margin: 1.2rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.65rem; }
+  .checks li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.97rem; }
+  .checks svg { flex: none; color: var(--breeze); margin-top: 3px; }
+
+  /* Work */
+  .work { background: var(--mist-deep); }
+  .work-grid { display: grid; gap: 1rem; margin-top: 2.4rem; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 820px) { .work-grid { grid-template-columns: repeat(3, 1fr); } }
+  .shot { margin: 0; border: 1px solid var(--line); border-radius: 0.6rem; overflow: hidden; background: var(--card); }
+  .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--img-bg); }
+  .shot figcaption { padding: 0.75rem 1rem; font-size: 0.86rem; color: var(--ink-soft); font-weight: 500; }
+  .fine { margin-top: 1.3rem; font-size: 0.85rem; color: var(--ink-soft); }
+
+  /* Licensed */
+  .lic-wrap { display: grid; gap: 1.8rem; margin-top: 2.3rem; align-items: center; }
+  @media (min-width: 820px) { .lic-wrap { grid-template-columns: minmax(0, 300px) 1fr; gap: 2.6rem; } }
+  .lic-card { background: var(--card); border: 1px solid var(--line); border-radius: 0.8rem; padding: 2rem 1.7rem; text-align: center; }
+  .lic-card .num { font-family: var(--display); font-weight: 800; font-size: 2rem; color: var(--steel); line-height: 1; font-variant-numeric: tabular-nums; }
+  .lic-card .lbl { margin-top: 0.45rem; font-weight: 600; font-size: 0.93rem; }
+  .lic-card .sub { margin-top: 0.4rem; font-size: 0.85rem; color: var(--ink-soft); }
+  .lic-card a { display: inline-block; margin-top: 0.85rem; font-size: 0.88rem; font-weight: 600; }
+
+  /* Areas + contact */
+  .info-grid { display: grid; gap: 2.4rem; }
+  @media (min-width: 860px) { .info-grid { grid-template-columns: 1.2fr 1fr; align-items: start; gap: 3.2rem; } }
+  .area-grid { display: grid; gap: 0.75rem; margin-top: 1.6rem; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 620px) { .area-grid { grid-template-columns: repeat(3, 1fr); } }
+  .area {
+    background: var(--card); border: 1px solid var(--line); border-radius: 0.5rem;
+    padding: 0.85rem 0.8rem; text-align: center; font-weight: 600; font-size: 0.92rem; color: var(--steel-deep);
+  }
+  .side-card { background: var(--card); border: 1px solid var(--line); border-radius: 0.6rem; padding: 1.5rem 1.4rem; }
+  .side-card + .side-card { margin-top: 1.1rem; }
+  .side-card h3 { font-size: 1.04rem; }
+  .side-card p { margin-top: 0.5rem; font-size: 0.94rem; color: var(--ink-soft); }
+  .side-card a { font-weight: 600; overflow-wrap: anywhere; }
+
+  /* Contact band */
+  .contact-band { background: var(--steel-deep); text-align: center; }
+  .contact-band .eyebrow { color: #F0A98C; }
+  .contact-band h2 { color: var(--on-dark); }
+  .contact-band .section-intro { color: var(--on-dark); opacity: 0.88; margin-inline: auto; }
+  .contact-band .hero-ctas { justify-content: center; }
+  .contact-band .btn-solid { background: var(--ember); color: #FFFFFF; }
+  .contact-band .btn-solid:hover { background: var(--on-dark); color: var(--steel-deep); }
+  .contact-band .btn-ghost { border-color: var(--on-dark); color: var(--on-dark); }
+  .contact-band .btn-ghost:hover { border-color: #F0A98C; color: #F0A98C; }
+  .contact-band .fine { margin-top: 1.5rem; font-size: 0.92rem; color: var(--on-dark); opacity: 0.85; }
+  :root[data-theme="dark"] .contact-band { background: var(--mist-deep); }
+  :root[data-theme="dark"] .contact-band h2,
+  :root[data-theme="dark"] .contact-band .section-intro,
+  :root[data-theme="dark"] .contact-band .fine { color: var(--ink); }
+  :root[data-theme="dark"] .contact-band .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .contact-band { background: var(--mist-deep); }
+    :root:not([data-theme="light"]) .contact-band h2,
+    :root:not([data-theme="light"]) .contact-band .section-intro,
+    :root:not([data-theme="light"]) .contact-band .fine { color: var(--ink); }
+    :root:not([data-theme="light"]) .contact-band .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  }
+
+  /* Footer */
+  footer.site {
+    background: var(--mist-deep); border-top: 1px solid var(--line);
+    color: var(--ink-soft); padding: 2.5rem 0; text-align: center; font-size: 0.9rem;
+  }
+  footer.site .fbrand { font-family: var(--display); font-weight: 800; font-size: 1.25rem; color: var(--steel-deep); margin-bottom: 0.35rem; }
+  footer.site p { margin-top: 0.3rem; }
+  footer.site a { color: inherit; }
+  footer.site .fineprint { font-size: 0.78rem; max-width: 52em; margin: 0.9rem auto 0; }
+</style>
+</head>
+<body>
+
+<div class="site-head">
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="#top" aria-label="Marcus Air Conditioning home">
+        <span class="mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg>
+        </span>
+        <span class="name">Marcus Air Conditioning<small>Heating &amp; Air Solutions</small></span>
+      </a>
+      <nav class="top" aria-label="Sections">
+        <a href="#services">Services</a>
+        <a href="#who">Home &amp; business</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Our work</a>
+        <a href="#areas">Areas</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="call-btn" href="tel:+19167930168">Call (916) 793-0168</a>
+    </header>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="pills">
+          <span class="pill">25+ years of experience</span>
+          <span class="pill">Licensed, bonded &amp; insured</span>
+        </div>
+        <h1>Heating and air solutions, <span class="warm">done properly.</span></h1>
+        <p class="lede">Marcus Air Conditioning has over 25 years of experience in heating and air conditioning, serving homes and businesses across Plumas Lake, Yuba City, Marysville and north Sacramento. Installation, repair, and maintenance that lasts.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="tel:+19167930168">Call (916) 793-0168</a>
+          <a class="btn btn-ghost" href="#services">What we do</a>
+        </div>
+        <p class="hero-note">CSLB #1130983 &middot; bonded &amp; insured &middot; Plumas Lake, CA</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/work-van.jpg" alt="Marcus Air Conditioning service van on a job">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 2. STRIP ============ -->
+  <div class="strip">
+    <div class="wrap strip-grid">
+      <div><div class="n">25+ years</div><div class="l">In the trade</div></div>
+      <div><div class="n">#1130983</div><div class="l">CSLB licensed</div></div>
+      <div><div class="n">$25,000</div><div class="l">Contractor's bond</div></div>
+      <div><div class="n">Insured</div><div class="l">Workers' comp carried</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 3. SERVICES ============ -->
+  <section id="services">
+    <div class="wrap">
+      <p class="eyebrow">What we do</p>
+      <h2>Cooling, heating, and keeping both running.</h2>
+      <p class="section-intro">A C-20 license covers the full system — the AC, the furnace, and the maintenance that keeps you off the emergency call list.</p>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg></div>
+          <h3>AC installation &amp; replacement</h3>
+          <p>New systems sized correctly for the building — not guessed at. Old unit removed and hauled away.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 1-6 6L4 17v3h3l4.7-4.7a4.5 4.5 0 0 0 6-6l-2.5 2.5-2.1-2.1z"/></svg></div>
+          <h3>AC repair</h3>
+          <p>Diagnosed properly before anything gets replaced. Valley summers are unforgiving — we get you cool again fast.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7S6.5 9.4 6.5 14a5.5 5.5 0 0 0 11 0c0-4.6-5.5-11.3-5.5-11.3z"/></svg></div>
+          <h3>Heating &amp; furnace repair</h3>
+          <p>Furnaces and heat pumps serviced and repaired — running safely and efficiently before the cold arrives.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg></div>
+          <h3>Maintenance &amp; tune-ups</h3>
+          <p>Seasonal servicing that catches small faults early, keeps efficiency up, and extends the life of the system.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg></div>
+          <h3>Residential HVAC</h3>
+          <p>Single rooms to whole homes — even temperatures throughout, and bills that reflect a system working as it should.</p>
+        </div>
+        <div class="svc">
+          <div class="ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="17" rx="1"/><rect x="13" y="9" width="8" height="12" rx="1"/><path d="M6 8h2M6 12h2M16 13h2"/></svg></div>
+          <h3>Commercial HVAC</h3>
+          <p>Shops, offices and light commercial premises — systems kept running so the business keeps running.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. HOME & BUSINESS ============ -->
+  <section id="who" class="split">
+    <div class="wrap">
+      <p class="eyebrow">Who we work for</p>
+      <h2>Homes and businesses, both done right.</h2>
+      <p class="section-intro">Residential and commercial work runs on the same standard &mdash; the scale is just different.</p>
+      <div class="split-grid">
+        <figure class="side">
+          <img src="img/living-room.jpg" alt="Comfortable home interior kept at an even temperature" loading="lazy">
+          <div class="body">
+            <h3>For your home</h3>
+            <p>A house that is cold in one room and stifling in another usually has a fixable cause. We find it, explain it plainly, and put it right &mdash; whether that is a repair, a tune-up, or a system that has reached the end of its life.</p>
+          </div>
+        </figure>
+        <figure class="side">
+          <img src="img/commercial.jpg" alt="Commercial interior space with climate control" loading="lazy">
+          <div class="body">
+            <h3>For your business</h3>
+            <p>Downtime costs money and customers. We service and install commercial systems with that in mind &mdash; scheduled around your trading hours wherever possible, and back up and running fast when something fails.</p>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. EXPERIENCE ============ -->
+  <section id="experience">
+    <div class="wrap">
+      <p class="eyebrow">Our commitment</p>
+      <h2>Over 25 years in heating and air.</h2>
+      <div class="exp-wrap">
+        <div class="exp-card">
+          <div class="big">25+</div>
+          <div class="lbl">Years of experience</div>
+          <div class="sub">Heating and air conditioning</div>
+        </div>
+        <div>
+          <p>At Marcus Air Conditioning we have over 25 years of experience providing heating and air conditioning services. That dedication shows in our maintenance and installation work, where the details decide whether a system lasts five years or fifteen.</p>
+          <ul class="checks">
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Commercial and residential</strong> — one contractor for both.</span></li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Licensed C-20 contractor</strong> — the classification specific to heating and air conditioning.</span></li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Workers' compensation carried</strong> — many small outfits carry none, which leaves the property owner exposed.</span></li>
+            <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Straight answers</strong> — what is wrong, what it takes, and what it costs, before work starts.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. WORK ============ -->
+  <section id="work" class="work">
+    <div class="wrap">
+      <p class="eyebrow">The work</p>
+      <h2>Comfort you stop having to think about.</h2>
+      <p class="section-intro">From a thermostat that finally holds its setting to a full system install.</p>
+      <div class="work-grid">
+        <figure class="shot">
+          <img src="img/work-van.jpg" alt="Marcus Air Conditioning van at a job site" loading="lazy">
+          <figcaption>On the road across the valley</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/tech-outdoor.jpg" alt="Technician working on an outdoor unit's electrical connections" loading="lazy">
+          <figcaption>Diagnosis &amp; repair</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/thermostat.jpg" alt="Smart thermostat mounted on a wall" loading="lazy">
+          <figcaption>Controls &amp; thermostats</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/open-plan.jpg" alt="Open-plan kitchen and living space at an even temperature" loading="lazy">
+          <figcaption>Whole-home comfort</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/commercial.jpg" alt="Commercial premises interior" loading="lazy">
+          <figcaption>Light commercial work</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/living-room.jpg" alt="Living room kept comfortable year round" loading="lazy">
+          <figcaption>Even heat, room to room</figcaption>
+        </figure>
+      </div>
+      <p class="fine">The van is ours. Other photos illustrate the type of work offered &mdash; job photos coming soon.</p>
+    </div>
+  </section>
+
+  <!-- ============ 7. LICENSED &amp; AREAS ============ -->
+  <section id="areas">
+    <div class="wrap">
+      <p class="eyebrow">Licensed &amp; local</p>
+      <h2>Check the license, then check the map.</h2>
+      <div class="lic-wrap">
+        <div class="lic-card">
+          <div class="num">1130983</div>
+          <div class="lbl">CSLB license number</div>
+          <div class="sub">C-20 &mdash; Warm-Air Heating,<br>Ventilating &amp; Air-Conditioning<br>Active &middot; $25,000 bond</div>
+          <a href="https://www.cslb.ca.gov/onlineservices/checklicenseII/checklicense.aspx" rel="noopener">Verify at cslb.ca.gov &rarr;</a>
+        </div>
+        <div>
+          <p>California requires a contractor's license for any HVAC job over $500 in labor and materials. Ours is active, bonded, and carries workers' compensation insurance &mdash; all of it public record and verifiable in about a minute.</p>
+          <div class="area-grid">
+            <div class="area">Plumas Lake</div>
+            <div class="area">Olivehurst</div>
+            <div class="area">Marysville</div>
+            <div class="area">Yuba City</div>
+            <div class="area">Wheatland</div>
+            <div class="area">Lincoln</div>
+          </div>
+          <p class="fine">Also serving north Sacramento. Elsewhere nearby? Call and ask &mdash; if we can get there, we will.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8. CONTACT ============ -->
+  <section id="contact" class="contact-band">
+    <div class="wrap">
+      <p class="eyebrow">Heating &amp; air solutions</p>
+      <h2>Let's get your system sorted.</h2>
+      <p class="section-intro">Too hot, too cold, making a noise it never used to, or due a service &mdash; call or email and we will tell you what it takes.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="tel:+19167930168">Call (916) 793-0168</a>
+        <a class="btn btn-ghost" href="mailto:Marcus.Yslava@gmail.com">Email us</a>
+      </div>
+      <p class="fine">Plumas Lake, CA &middot; serving Yuba, Sutter, Placer &amp; north Sacramento &middot; CSLB #1130983</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fbrand">Marcus Air Conditioning</div>
+    <p>Heating &amp; Air Solutions &middot; Licensed C-20 HVAC Contractor &middot; Plumas Lake, California</p>
+    <p><a href="tel:+19167930168">(916) 793-0168</a> &middot; <a href="mailto:Marcus.Yslava@gmail.com">Marcus.Yslava@gmail.com</a></p>
+    <p>California CSLB license #1130983 &middot; bonded &amp; insured</p>
+    <p class="fineprint">License number, classification, bond and workers' compensation status are public record with the California Contractors State License Board and can be verified at cslb.ca.gov. Some photographs illustrate the type of work offered rather than specific completed jobs.</p>
+  </div>
+</footer>
+
+</body>
+</html>
